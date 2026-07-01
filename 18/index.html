@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Read More / Read Less Toggle</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+    }
+
+    #moreText {
+      display: none;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      cursor: pointer;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <p>
+    JavaScript is one of the most popular programming languages used to create
+    interactive web pages.
+    <span id="dots">...</span>
+    <span id="moreText">
+      It allows developers to build dynamic websites by responding to user
+      actions such as clicks, typing, and scrolling. JavaScript also powers
+      animations, form validation, games, and modern web applications.
+    </span>
+  </p>
+
+  <button id="toggleBtn">Read More</button>
+
+  <script>
+    const btn = document.getElementById("toggleBtn");
+    const dots = document.getElementById("dots");
+    const moreText = document.getElementById("moreText");
+
+    btn.addEventListener("click", function () {
+      if (moreText.style.display === "none") {
+        moreText.style.display = "inline";
+        dots.style.display = "none";
+        btn.textContent = "Read Less";
+      } else {
+        moreText.style.display = "none";
+        dots.style.display = "inline";
+        btn.textContent = "Read More";
+      }
+    });
+  </script>
+
+</body>
+</html>
